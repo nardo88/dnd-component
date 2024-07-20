@@ -118,7 +118,7 @@ export function DragElement<T>({
       container!.removeChild(div)
       items.forEach((item) => {
         // @ts-ignore
-        item.style.transform = 'none'
+        item.style.transform = ''
       })
       setData(newData)
     }
