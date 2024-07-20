@@ -18,6 +18,7 @@ export function DragElement<T>({
   data,
   setData,
   keyField,
+  className,
 }: IDragElementProps<T>) {
   const ref = useRef<HTMLDivElement>(null)
   const [container, setContainer] = useState<Element | null>(null)
@@ -132,7 +133,9 @@ export function DragElement<T>({
   return (
     <div
       ref={ref}
-      className={classNames(cls.dragItem, { [cls.dragging]: isDragging }, [])}
+      className={classNames(cls.dragItem, { [cls.dragging]: isDragging }, [
+        className,
+      ])}
       onPointerDown={(e) => dragStart(e, index)}>
       {children}
     </div>
